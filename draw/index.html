@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ultimate Drawing App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="toolbar glass">
+      <h1>🎨 DrawIt Pro</h1>
+
+      <div class="head">
+          <label>Brush Color
+            <input type="color" id="colorPicker" />
+          </label>
+
+          <label>Brush Size
+            <input type="range" id="brushSize" min="1" max="50" value="5" />
+          </label>
+
+          <div class="tools-group">
+              <button id="brushBtn" class="active">Brush</button>
+              <button id="rainbowBtn">🌈 Rainbow</button>
+              <button id="sprayBtn">💨 Spray</button>
+              <button id="eraserBtn">Eraser</button>
+          </div>
+
+          <button id="symmetryBtn">Toggle Symmetry</button>
+
+          <button id="undoBtn">Undo</button>
+          <button id="redoBtn">Redo</button>
+          <button id="clearBtn">Clear</button>
+
+          <label>Upload Image
+            <input type="file" id="imgUpload" accept="image/*" />
+          </label>
+
+          <button id="replayBtn">Replay Drawing</button>
+
+          <label class="toggle">
+            <input type="checkbox" id="darkModeToggle" />
+            <span>🌙 Dark Mode</span>
+          </label>
+      </div>
+    </aside>
+
+      <div class="drawingBoard">
+            <canvas id="drawingCanvas"></canvas>
+      </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background: #f0f0f0;
+  color: #111;
+}
+
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+canvas {
+  flex: 1;
+  display: block;
+  cursor: crosshair;
+  background: white;
+  transition: background 0.3s ease;
+}
+
+body.dark canvas {
+  background: #222;
+}
+
+.toolbar {
+  width: 260px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+button,
+input[type="color"],
+input[type="range"],
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+button.active {
+  background: #4a90e2;
+  color: white;
+}
+
+button:hover:not(.active) {
+  background-color: rgba(204, 20, 20, 0.1);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  font-weight: 600;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark .glass {
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.tools-group {
+  display: flex;
+  gap: 8px;
+}
+
+.tools-group button {
+  flex: 1;
+}
+
+.drawingBoard {
+  background-color: red;
+}
