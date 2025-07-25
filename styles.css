@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light {
+  background: #f0f0f0;
+  color: #111;
+}
+
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+canvas {
+  flex: 1;
+  display: block;
+  cursor: crosshair;
+  background: white;
+  transition: background 0.3s ease;
+}
+
+body.dark canvas {
+  background: #222;
+}
+
+.toolbar {
+  width: 260px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* 🎨 Sleek Button Styles */
+button,
+input[type="color"],
+input[type="range"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(145deg, #ffffffcc, #f0f0f0cc);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  color: #333;
+}
+
+body.dark button,
+body.dark input[type="color"],
+body.dark input[type="range"],
+body.dark input[type="file"] {
+  background: linear-gradient(145deg, #1f1f1fcc, #2a2a2acc);
+  color: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+button:hover:not(.active) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button.active {
+  background: linear-gradient(to right, #4a90e2, #357ABD);
+  color: white;
+  box-shadow: 0 6px 16px rgba(74, 144, 226, 0.4);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  font-weight: 600;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark .glass {
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.tools-group {
+  display: flex;
+  gap: 8px;
+}
+
+.tools-group button {
+  flex: 1;
+}
+
+/* Optional: drawingBoard style */
+.drawingBoard {
+  background-color: red;
+}
