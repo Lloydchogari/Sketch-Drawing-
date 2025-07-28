@@ -5,7 +5,8 @@ body {
 }
 
 body.light {
-  background: #f0f0f0;
+  background-color: #f0f0f0 ;
+  background-size: cover;
   color: #111;
 }
 
@@ -33,14 +34,15 @@ body.dark canvas {
 
 .toolbar {
   width: 260px;
-  padding: 20px;
+  padding: 10px;
+  padding-right: 95px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
 h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 8px;
   font-weight: 700;
 }
 
@@ -49,10 +51,11 @@ button,
 input[type="color"],
 input[type="range"],
 input[type="file"] {
-  width: 100%;
+  width: 80%;
   padding: 10px 14px;
-  border-radius: 999px;
+  border-radius: 998px;
   border: none;
+  margin-top: 10px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -62,6 +65,67 @@ input[type="file"] {
   backdrop-filter: blur(6px);
   color: #333;
 }
+
+/*I want the colorPicker to have the same color as the selected color*/
+
+
+
+#colorPicker {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+
+
+
+
+.colorMode {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1); /* glass effect */
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%; 
+  padding-top: 1px;
+}
+
+.colorMode label {
+  font-weight: 500;
+  color: inherit;
+}
+
+.dark-mode-icon {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.dark-mode-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+
+
+
+
 
 body.dark button,
 body.dark input[type="color"],
@@ -74,7 +138,7 @@ body.dark input[type="file"] {
 
 button:hover:not(.active) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(114, 114, 114, 0.2);
 }
 
 button:active {
@@ -86,6 +150,13 @@ button.active {
   color: white;
   box-shadow: 0 6px 16px rgba(74, 144, 226, 0.4);
 }
+
+body.dark button.active {
+  background: linear-gradient(to right, #4a90e2, #357ABD);
+  color: white;
+  box-shadow: 0 6px 16px rgba(74, 144, 226, 0.4);
+}
+
 
 label {
   display: flex;
@@ -101,11 +172,35 @@ label {
   font-weight: 600;
 }
 
+.dark-mode-icon {
+  width: 30px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.dark-mode-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+
+/* Hover effect */
+.dark-mode-icon:hover img {
+  transform: scale(1.1); /* Slight zoom effect */
+  filter: brightness(1.8); /* Lighten the icon */
+}
+
+
 /* Glassmorphism */
 .glass {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
+   background-color: rgba(82, 175, 73, 0.1);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+
+  
 }
 
 body.dark .glass {

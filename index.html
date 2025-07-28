@@ -9,12 +9,19 @@
 <body>
   <div class="app">
     <aside class="toolbar glass">
-      <h1>🎨 DrawIt Pro</h1>
+      <h1> SketchPad</h1>
 
       <div class="head">
-          <label>Brush Color
-            <input type="color" id="colorPicker" />
-          </label>
+          <div class="colorMode">
+              <label>Brush Color
+                <input type="color" id="colorPicker" />
+              </label>
+
+              <div class="dark-mode-icon" id="darkModeToggle" title="Toggle Dark Mode">
+                <img id="modeIcon" src="icons/dark.png" alt="Toggle Dark Mode" />
+              </div>
+              
+          </div>
 
           <label>Brush Size
             <input type="range" id="brushSize" min="1" max="50" value="5" />
@@ -38,17 +45,12 @@
           </label>
 
           <button id="replayBtn">Replay Drawing</button>
-
-          <label class="toggle">
-            <input type="checkbox" id="darkModeToggle" />
-            <span>🌙 Dark Mode</span>
-          </label>
       </div>
     </aside>
 
-      <div class="drawingBoard">
-            <canvas id="drawingCanvas"></canvas>
-      </div>
+    <div class="drawingBoard">
+        <canvas id="drawingCanvas"></canvas>
+    </div>
   </div>
 
   <script src="script.js"></script>
